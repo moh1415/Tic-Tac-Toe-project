@@ -1,5 +1,7 @@
 # Tic-Tac-Toe-game-project
 
+
+
 ### List technologies used
 
 
@@ -19,3 +21,7 @@
 
 
 ###  Future iterations
+* Add an AI opponent.
+
+
+
