@@ -2,7 +2,7 @@ body{
     background-image: url("images/green-potted-plant-on-white-ceramic-vase-1166644.jpg");
     background-size: 1100px;
     
-    background-color: #FFCD96;
+    /* background-color: #FFCD96; */
     font-family: Arial, Helvetica, sans-serif;
     
 }
@@ -12,13 +12,13 @@ h2{
     opacity: 90%;
 }
 .container{
-width: 1000px;
+/* width: 1000px; */
 text-align: center;
 margin: auto;
 /* display: inline; */
 /* border: 2px solid black; */
 
-padding: 20px;
+padding-top: 20px;
 
 }
 
@@ -31,26 +31,35 @@ font-weight: bold;
 background-color: silver;
 border-radius: 20px;
 opacity: 80%;
+cursor: pointer;
 
 }
 .game{
 margin: auto;
-border: black 1px solid;
+border: #808080 1px solid;
 display: grid;
 /* to set the gird of 3 item on row */
 grid-template-columns: auto auto auto;
-height: 400px;
+height: 364px;
+
+width: 364px;
 /* width: 100%;
 float: left; */
 
 }
 .box{
-   
-    border: black 1px solid;
+    display:flex;
+    border: #808080 1px solid;
+    justify-content: center;
+    align-items: center;
+      
     text-align: center;
     font-size: 40px;
-    padding: 40px;
-    font-weight: bold;
+    /* font-weight: bold; */
+    cursor: pointer;
+    padding: auto;
+    width: 120px;
+    height: 120px;
     
 }
 .msg{
