@@ -6,10 +6,15 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     
 }
+header{
+    background-color:rgba(240, 240, 240,0,5);;
+    padding: 5px;
+}
 h2{
-    color: tomato;
-    padding: 1px;
-    opacity: 90%;
+    color: rgb(64,64,64);
+     padding: 1px;
+    /* opacity: 90%; */
+
 }
 .container{
 /* width: 1000px; */
@@ -24,6 +29,7 @@ padding-top: 20px;
 
 .btn{
 padding: 20px;
+margin-top: 10px;
 margin-bottom: 10px;
 font-size: medium;
 color: black;
