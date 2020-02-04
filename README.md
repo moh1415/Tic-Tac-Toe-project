@@ -30,7 +30,7 @@ None
 ###
 2. For both center diameter, I use the logical indexes and check if they did not empty then check if they match then return value of box win to determine which player wins.
 
-###Future iterations
+### Future iterations
 * Add an AI opponent.
 
 
