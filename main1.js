@@ -20,11 +20,13 @@ const start = function(){
         msgDiv.innerText ="";
         
         msg1Div.innerText="You Win player 1 ";
+        audio.play();
        
     }
     else if(checkWin() == "O"){
         msgDiv.innerText="";
         msg1Div.innerText="You Win player 2 ";
+        audio.play();
        
     }
     else{
@@ -48,14 +50,17 @@ function fisrt_role(player1)
         {
             if(player1 == "X")
             {
+                //lessiner to any event of the document with Jquery and add same animate for the font
                 $(event.target).text(player1).animate({fontSize: "6em"}).css('backgroundImage', 'url(images/102456.jpg)');
                 msgDiv.innerText ="player 2 Your turn choose ";
+                //change the value of player for the next turn
                 return player = "O";
             }
             if(player1 =="O")
             {   
                 $(event.target).text(player1).animate({fontSize: "6em"});
                 msgDiv.innerText ="player 1 Your turn choose ";
+                //change the value of player for the next turn
                 return player = "X";
             }
            
@@ -72,7 +77,7 @@ function fisrt_role(player1)
                 if(notempty($(boxs[i]).text() , $(boxs[i+3]).text() , $(boxs[i+6]).text()))
                 {
                     if($(boxs[i]).text() == $(boxs[i+3]).text() && $(boxs[i+3]).text() == $(boxs[i+6]).text()){
-                        // $(boxs[i]).append("<svg height='122' width='122'> <line x1='0' y1='0' x2='200' y2='200' style='stroke:rgb(255,0,0);stroke-width:5' /></svg>");
+                    //stop the event click for all boxs
                         $(boxs).off('click');
                         //return msg1Div.innerText="You Win player "+user;
                         return $(boxs[i]).text();
@@ -83,9 +88,8 @@ function fisrt_role(player1)
             if(notempty($(boxs[0]).text(),$(boxs[4]).text(),$(boxs[8]).text())){
                 if($(boxs[0]).text()==$(boxs[4]).text()&& $(boxs[4]).text()==$(boxs[8]).text())
                 {
-
+                    //stop the event click
                     $(boxs).off('click');
-                    //return msg1Div.innerText="You Win player "+user;
                     return $(boxs[0]).text();
                 }
             }
@@ -93,6 +97,7 @@ function fisrt_role(player1)
             if(notempty($(boxs[2]).text(),$(boxs[4]).text(),$(boxs[6]).text())){
                 if($(boxs[2]).text()==$(boxs[4]).text()&& $(boxs[4]).text()==$(boxs[6]).text())
                 {
+                    //stop the event click
                     $(boxs).off('click');
                 // return msg1Div.innerText="You Win player "+user;
                     return $(boxs[2]).text();
@@ -106,6 +111,7 @@ function fisrt_role(player1)
                 {    
                     if($(boxs[row[i]]).text()==$(boxs[row[i+1]]).text()&& $(boxs[row[i+1]]).text() == $(boxs[row[i+2]]).text())
                     {
+                        //stop the event click
                         $(boxs).off('click');
                          return $(boxs[row[i]]).text();
                     }
@@ -122,8 +128,9 @@ function notempty(box1,box2,box3)
     }
 }
 
+//fuction to re-set all boxs , players and clear the messages of div
 function resetBoxs(){
-    
+    //loop for all boxs and set the values to empty and remove the style of all boxs
     for(let i =0;i<boxs.length;i++){
         
         $(boxs[i]).text("");
@@ -140,11 +147,9 @@ function resetBoxs(){
 $(boxs).one("click",start);
 //add listener for restart button
 resetBtn.addEventListener("click",resetBoxs);
-// $(".score").hide();
-// function showScore(){
-//     $(".score").show();
-//     $.text("Player 1 win "+trackscore.player1win+" times player 2 win "+  trackscore.player2win+" times the number of tie "+trackscore.tie);
-// }
-// $("#show").one("click",showScore);
+//get the sound effect from the dom and put it variable 
+let audio = document.querySelector(".sound");
+//set the sound off
+audio.pause();
 
 

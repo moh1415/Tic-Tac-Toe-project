@@ -38,34 +38,34 @@ background-color: silver;
 border-radius: 20px;
 opacity: 80%;
 cursor: pointer;
+/* background-color: #e7e7e7; color: black; */
 
 }
+.btn:hover {background: #ddd;}
 .game{
 margin: auto;
-border: #808080 1px solid;
+border: #808080 2px solid;
 display: grid;
 /* to set the gird of 3 item on row */
 grid-template-columns: auto auto auto;
-height: 364px;
+height: 375px;
+width: 375px;
 
-width: 364px;
-/* width: 100%;
-float: left; */
+
 
 }
 .box{
     display:flex;
-    border: #808080 1px solid;
+    border: #808080 2px solid;
     justify-content: center;
     align-items: center;
-      
     text-align: center;
     font-size: 40px;
     /* font-weight: bold; */
     cursor: pointer;
     padding: auto;
-    width: 120px;
-    height: 120px;
+    width: 121px;
+    height: 121px;
     
 }
 .msg{
@@ -74,10 +74,10 @@ color: black;
 }
 footer{
     text-align: center;
-    margin-top: 30px;
-    font-weight: bold;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 150px;
+    /* font-weight: bold; */
+    font-size: 15px;
+    font-family: sans-serif;
     opacity: 0.80;
 }
 
