@@ -1,9 +1,8 @@
 // get the button from dom
 const resetBtn = document.querySelector('#reset');
-//adding event linser for reset button to re-start the game
-//to print who player turn
+//to print who player turn by get the h4 element
 let msgDiv = document.querySelector('.msg');
-//to print the result of the game by get the the div that have h1 from dom
+//to print the result of the game by get the the div that have h4 from dom
 let msg1Div = document.querySelector('.msg1');
 //get the all the boxs by class name using jquery
 let boxs = $(".box");
@@ -11,26 +10,28 @@ let boxs = $(".box");
 let player = "X";
 //the callback function to start the game
 const start = function(){
-    console.log('Click');
     
+    //call function first role
     fisrt_role(player);
-
+    // if the condition that checks if a return of checkwin function X or O to determine who win
     if(checkWin() == "X")
     {
-        msgDiv.innerText ="";
-        
+        msgDiv.innerText =""; //assign message who turn next to empty
+        // print message win in msg1Div
         msg1Div.innerText="You Win player 1 ";
+        //run sound effect when the player win.
         audio.play();
        
     }
     else if(checkWin() == "O"){
-        msgDiv.innerText="";
+        //assign message who turn next to empty
+        msgDiv.innerText="";// print message win in msg1Div
         msg1Div.innerText="You Win player 2 ";
-        audio.play();
+        audio.play();//run sound effect when the player win.
        
     }
     else{
-       //check if all boxs have value not empty and no match and print
+       //check if all boxs have value not empty and  there no match and print tie
         for(let i =0;i<$(boxs).length;i++){
         if($(boxs[i]).text() != "" && notempty($(boxs[8]).text() ,$(boxs[0]).text(),$(boxs[1]).text()) &&
         notempty($(boxs[2]).text() ,$(boxs[3]).text(),$(boxs[4]).text()) && notempty($(boxs[5]).text() ,$(boxs[6]).text(),$(boxs[7]).text()) )
@@ -45,7 +46,8 @@ const start = function(){
         
     }
 }
-
+// function lisein to event and asign the value of the click etier X or O 
+//and change the turn to the next player 
 function fisrt_role(player1)
         {
             if(player1 == "X")
@@ -128,7 +130,7 @@ function notempty(box1,box2,box3)
     }
 }
 
-//fuction to re-set all boxs , players and clear the messages of div
+//fuction to re-set all boxs , players and clear the messages of div and h4
 function resetBoxs(){
     //loop for all boxs and set the values to empty and remove the style of all boxs
     for(let i =0;i<boxs.length;i++){
@@ -140,7 +142,7 @@ function resetBoxs(){
      player = "X";
      msg1Div.innerText = "";
      msgDiv.innerText = "";
-     boxs.one("click",start);
+     boxs.one("click",start); //run the listener again
 
 }
 //add listener to the game bord with Jquery
